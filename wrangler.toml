@@ -1,0 +1,32 @@
+name = "cloudflare-bill-manager"
+main = "src/index.js"
+compatibility_date = "2026-11-09"
+workers_dev = true
+preview_urls = false
+
+[triggers]
+# 01:00 UTC = 09:00 Asia/Shanghai
+crons = ["0 1 * * *"]
+
+[vars]
+APP_URL = "https://bills.example.com"
+EMAIL_RECIPIENT = "statements@example.com"
+NOTIFY_PROVIDER = "none"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "cloudflare-bill-manager"
+database_id = "00000000-0000-0000-0000-000000000000"
+
+[[r2_buckets]]
+binding = "BUCKET"
+bucket_name = "cloudflare-bill-manager"
+
+[observability]
+enabled = true
+head_sampling_rate = 0.1
+
+# Optional custom domain, configured only in ignored wrangler.local.toml:
+# [[routes]]
+# pattern = "bills.example.com"
+# custom_domain = true

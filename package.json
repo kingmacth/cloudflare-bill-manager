@@ -1,0 +1,26 @@
+{
+  "name": "cloudflare-bill-manager",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/wrangler.mjs dev",
+    "deploy": "node scripts/wrangler.mjs deploy",
+    "test": "node --test tests/*.test.js",
+    "db:local": "node scripts/wrangler.mjs d1 execute DB --local --file=schema.sql",
+    "db:remote": "node scripts/wrangler.mjs d1 execute DB --remote --file=schema.sql",
+    "check": "npm run check:frontend && npm run check:public && wrangler deploy --dry-run",
+    "check:frontend": "node scripts/check-frontend.mjs",
+    "check:public": "node scripts/check-public.mjs"
+  },
+  "dependencies": {
+    "postal-mime": "^2.5.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2",
+    "miniflare": "^5.20261104.0-beta",
+    "wrangler": "^4.130.0"
+  },
+  "description": "Self-hosted credit card and recurring bill manager on Cloudflare Workers, D1 and R2",
+  "license": "MIT"
+}

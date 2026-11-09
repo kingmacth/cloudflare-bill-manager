@@ -1,0 +1,13 @@
+# Local development only. Replace both placeholders before starting.
+AUTH_TOKEN=CHANGE_ME_RANDOM_API_TOKEN
+LOGIN_PASSWORD=CHANGE_ME_STRONG_LOGIN_PASSWORD
+
+# Optional generic webhook. Keep credentials out of wrangler.toml.
+# Set NOTIFY_PROVIDER="webhook" in wrangler.local.toml to enable.
+# NOTIFY_WEBHOOK_URL=https://notifications.example.com/webhook
+# NOTIFY_WEBHOOK_TOKEN=CHANGE_ME_WEBHOOK_TOKEN
+# NOTIFY_WEBHOOK_HEADERS={"X-Application":"bill-manager"}
+# NOTIFY_WEBHOOK_TEMPLATE={"title":"{{title}}","text":"{{message}}","url":"{{appUrl}}"}
+
+# Optional PDF service binding password.
+# PDF_PASSWORD=CHANGE_ME_PDF_PASSWORD
